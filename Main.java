@@ -2,7 +2,7 @@ public class Main
 {
   public static void main(String[] args)
   {
-    // write your code here
+    removeStr( "bbbbbbadaboom", "ada");
   }
 
   /** Precondition: s1 and s2 are not null
@@ -10,7 +10,17 @@ public class Main
   */
   public static void lastFirstN(String s1, String s2, int n)
   {
-  
+    String output;
+    String firstN = s1;
+    String lastN = s2;
+
+  firstN = s1.substring(0,n);
+
+   int L = lastN.length() ;
+  lastN = s2.substring(L - n);
+
+    output = lastN + firstN;
+   System.out.println(output);
   }
 
   /** Precondition: s1 and s2 are not null
@@ -18,14 +28,25 @@ public class Main
   public static void stringManip(String s1, String s2)
   {
   
+ String Word1 = s1.toUpperCase();
+ String firstS2 = s2.substring(0,1).toUpperCase();
+ String restS2 = s2.substring(1).toLowerCase();
+
+ System.out.println(Word1 + firstS2 + restS2);
+
   }
 
-  /** Precondition: s1 and s2 are not null
-  * Precondition: s2 is a substring of s1 and can be found at least one time in s1
-  */
   public static String removeStr(String s1, String s2)
+
   {
-    String output = null;
-    return output;
+
+    String before = s1.substring(0,s1.indexOf(s2));
+
+    String after = s1.substring(s1.indexOf(s2) + s2.length());
+
+
+    System.out.println(before + after);
+    return before + after;
   }
+
 }
